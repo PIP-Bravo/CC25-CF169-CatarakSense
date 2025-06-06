@@ -19,11 +19,20 @@ module.exports = [
         output: 'stream',
         parse: true,
         allow: 'multipart/form-data',
-        maxBytes: 2097152,
+        maxBytes: 10485760, // increased to  10MB
         multipart: true,
       },
       description: 'Deteksi Katarak',
       notes: 'Endpoint untuk deteksi katarak dari citra mata',
+      tags: ['api'],
+    },
+  },
+  {
+    method: 'GET',
+    path: '/model-status',
+    handler: detectionHandler.getModelStatus,
+    options: {
+      description: 'Cek status model ML',
       tags: ['api'],
     },
   },

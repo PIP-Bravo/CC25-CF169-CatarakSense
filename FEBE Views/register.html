@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar - Catarak Sense</title>
+  <style>
+    /* Style the same as login form */
+
+    :root {
+      --clr-bg: #ffffff;
+      --clr-text-primary: #111827;
+      --clr-text-secondary: #6b7280;
+      --clr-accent-black: #000000;
+      --clr-accent-black-hover: #222222;
+      --clr-google-bg: #ffffff;
+      --clr-google-border: #ddd;
+      --clr-google-text: #444444;
+      --clr-facebook-bg: #1877f2;
+      --clr-facebook-bg-hover: #155abb;
+      --clr-facebook-text: #ffffff;
+      --border-radius: 0.75rem;
+      --container-max: 350px;
+      --font-headline: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter&display=swap');
+
+    /* Reset and base */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background-color: var(--clr-bg);
+      color: var(--clr-text-secondary);
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--clr-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-card);
+      padding: 2rem 2.5rem;
+      width: 100%;
+      max-width: var(--container-max);
+      color: var(--clr-text-primary);
+      user-select: none;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      max-height: 100%;
+    }
+
+    h2 {
+      font-family: var(--font-headline);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--clr-text-primary);
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      user-select: none;
+      display: block;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius);
+      background-color: #f9fafb;
+      color: var(--clr-text-primary);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="text"]:focus {
+      border-color: var(--clr-accent-black);
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+      outline: none;
+      background-color: #fff;
+    }
+
+    button.register-btn {
+      background-color: var(--clr-accent-black);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+      width: 100%;
+    }
+
+    button.register-btn:hover,
+    button.register-btn:focus-visible {
+      background-color: var(--clr-accent-black-hover);
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .register-link {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .register-link a {
+      color: var(--clr-accent-black);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    .login-link {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .login-link a {
+      color: var(--clr-accent-black);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="card" aria-labelledby="register-title">
+    <h2 id="register-title">Daftar</h2>
+    <form id="register-form" novalidate>
+      <div class="form-group">
+        <label for="register-name">Nama</label>
+        <input type="text" id="register-name" name="name" required placeholder="Masukkan Nama Anda" />
+      </div>
+
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" name="email" required autocomplete="email" placeholder="Masukkan Email Anda" />
+      </div>
+
+      <div class="form-group">
+        <label for="register-password">Kata Sandi</label>
+        <input type="password" id="register-password" name="password" required autocomplete="new-password" placeholder="Masukkan Kata Sandi" />
+      </div>
+
+      <div class="form-group">
+        <label for="register-password-confirm">Konfirmasi Kata Sandi</label>
+        <input type="password" id="register-password-confirm" name="password-confirm" required autocomplete="new-password" placeholder="Konfirmasi Kata Sandi" />
+      </div>
+
+      <button type="submit" class="register-btn" aria-label="Daftar ke Catarak Sense">Daftar</button>
+
+      <div class="login-link">
+        <p>Sudah punya akun? <a href="login.html">Masuk</a></p>
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CatarakSense - Deteksi</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/png" href="assets/img/catarak.png" />
+    <!-- Lottie library -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="assets/img/catarak.png" alt="Catarak Sense" class="logo" />
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="deteksi.html">Deteksi</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="#" class="logout">Logout</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="deteksi">
+        <h2>Deteksi Katarak</h2>
+
+        
+
+        <!-- Progress Steps (Step 1, Step 2, Step 3) -->
+        <div class="progress-steps">
+          <div class="step active" id="step1">
+            <div class="circle">1</div>
+            <p>Unggah Citra Mata</p>
+          </div>
+          <div class="step" id="step2">
+            <div class="circle">2</div>
+            <p>Analisis Sistem</p>
+          </div>
+          <div class="step" id="step3">
+            <div class="circle">3</div>
+            <p>Selesai</p>
+          </div>
+        </div>
+
+        <div class="upload-section">
+          <div class="drag-drop">
+            <input type="file" id="fileInput" />
+            <p>
+              Anda dapat menyeret dan menjatuhkan file di sini untuk
+              menambahkannya.
+            </p>
+          </div>
+
+          <!-- Image Preview -->
+          <div id="imagePreview">
+            <img
+              src="assets/img/hero.jpg"
+              alt="Image preview"
+              id="previewImage"
+            />
+          </div>
+
+          <!-- Loading State (DotLottie Animation) -->
+          <div id="loading" style="display: none">
+            <dotlottie-player
+              src="https://lottie.host/44a6c455-3ff5-426b-96c3-8189a060bf6b/ZX3lK4Gexx.lottie"
+              background="transparent"
+              speed="1"
+              style="width: 300px; height: 300px"
+              loop
+              autoplay
+            >
+            </dotlottie-player>
+          </div>
+
+          <button class="cta-btn" id="analyzeBtn" onclick="analyzeImage()">
+            Analisis Sekarang
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <nav class="footer-menu">
+          <a href="index.html">Home</a>
+          <a href="deteksi.html">Deteksi</a>
+          <a href="kontak.html">Kontak</a>
+        </nav>
+
+        <p class="footer-bottom-text">
+          CC25-CF169-CatarakSense &#169; 2025 | Coding Camp 2025 powered by DBS
+          Foundation
+        </p>
+      </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+
+    <script>
+      let currentStep = 1;
+
+      // Update the steps based on the current step
+      function updateProgressSteps(step) {
+        document.getElementById("step" + step).classList.add("active");
+        if (step > 1) {
+          document
+            .getElementById("step" + (step - 1))
+            .classList.add("completed");
+        }
+      }
+
+      function analyzeImage() {
+        // Show loading animation and hide preview
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("previewImage").style.display = "none";
+        document.querySelector(".cta-btn").style.display = "none";
+
+        // Update to step 2 (analisis)
+        currentStep = 2;
+        updateProgressSteps(currentStep);
+
+        // Simulate a delay for image analysis (e.g., 3 seconds)
+        setTimeout(() => {
+          // Once analysis is complete, hide loading animation
+          document.getElementById("loading").style.display = "none";
+
+          // Update to step 3 (selesai)
+          currentStep = 3;
+          updateProgressSteps(currentStep);
+
+          // SweetAlert2 success message
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Gambar berhasil dianalisis",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }, 3000); // Adjust the time delay as needed
+      }
+    </script>
+  </body>
+</html>

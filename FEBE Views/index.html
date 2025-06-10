@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="/icons/icon-192x192.png" />
+    <meta name="theme-color" content="#0ce22c" />
   </head>
 
   <body>
@@ -267,5 +271,16 @@
         showPage(currentPage);
       });
     </script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registered:', reg.scope))
+        .catch(err => console.log('SW registration failed:', err));
+      });
+    }
+    </script>
+
   </body>
 </html>

@@ -1,5 +1,7 @@
-import './main.js';
-import '../scripts/script.js';
+import "../components/footer.js";
+import './scripts/index.js';
+import './scripts/deteksi.js';
+import './scripts/kontak.js';
 import 'moment';
 import 'jquery';
 

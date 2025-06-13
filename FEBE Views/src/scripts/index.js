@@ -1,4 +1,12 @@
+import "../style/index.css";
+
 document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
   const dropdownButtons = document.querySelectorAll(".dropdown-btn");
 
   dropdownButtons.forEach((button) => {
@@ -22,18 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", fadeInOnScroll);
   fadeInOnScroll();
 
-const cataractInfo = document.getElementById("cataract-info");
-if (cataractInfo) {
-  window.addEventListener("scroll", () => {
-    if (
-      cataractInfo.getBoundingClientRect().top <= window.innerHeight - 150
-    ) {
-      cataractInfo.classList.add("visible");
-    }
-  });
-}
-
-
+  const cataractInfo = document.getElementById("cataract-info");
+  if (cataractInfo) {
+    window.addEventListener("scroll", () => {
+      if (
+        cataractInfo.getBoundingClientRect().top <=
+        window.innerHeight - 150
+      ) {
+        cataractInfo.classList.add("visible");
+      }
+    });
+  }
 
   const cataractItems = document.querySelectorAll(".cataract-item");
   const paginationContainer = document.getElementById("pagination");
@@ -45,8 +52,7 @@ if (cataractInfo) {
     let end = start + itemsPerPage;
 
     cataractItems.forEach((item, index) => {
-      item.style.display =
-        index >= start && index < end ? "flex" : "none";
+      item.style.display = index >= start && index < end ? "flex" : "none";
     });
 
     renderPagination(page);

@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kontak Catarak Sense</title>
-    <link rel="icon" type="image/png" href="assets/img/catarak.png" />
-    <link rel="stylesheet" href="style/kontak.css" />
+    <link rel="icon" type="image/png" href="../assets/img/catarak.png" />
   </head>
   <body>
     <header>
@@ -107,26 +106,18 @@
       </form>
     </main>
 
-    <app-footer></app-footer>
-    <script type="module" src="scripts/script.js"></script>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-menu">
+          <a href="index.html">Home</a>
+          <a href="deteksi.html">Deteksi</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+        <p class="footer-bottom-text">
+          &copy; 2025 CatarakSense. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="kontak.bundle.js"></script>
   </body>
-  
-  <script>
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        if (!this.checkValidity()) {
-          this.reportValidity();
-          return;
-        }
-
-        alert(
-          "Terima kasih atas pesan Anda! Kami akan segera menghubungi Anda."
-        );
-
-        this.reset();
-      });
-  </script>
 </html>

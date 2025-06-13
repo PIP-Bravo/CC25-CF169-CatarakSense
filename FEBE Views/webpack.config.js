@@ -3,8 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry:{
-    index: './src/index.js',
+    index: './src/scripts/index.js',
     deteksi: './src/scripts/deteksi.js', 
+    kontak: './src/scripts/kontak.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -61,7 +62,7 @@ module.exports = {
       filename: "kontak.html",
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: '[name].css',
     }),
   ],
 };

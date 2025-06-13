@@ -1,7 +1,21 @@
-let currentStep = 1;
+import "../style/deteksi.css";
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+}
+let currentStep = 1;
 // Update the steps based on the current step
 function updateProgressSteps(step) {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
   const current = document.getElementById("step" + step);
   const previous = document.getElementById("step" + (step - 1));
 

@@ -1,0 +1,1 @@
+(()=>{"use strict";var e=document.querySelector(".hamburger"),t=document.querySelector(".nav-menu");e&&t&&e.addEventListener("click",(function(){t.classList.toggle("show")}))})();

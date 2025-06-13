@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deteksi Katarak - CatarakSense</title>
+    <link rel="icon" type="image/png" href="../assets/img/catarak.png" />
+    <!-- Sesuaikan path favicon -->
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar">
+        <img
+          src="assets/img/logo.png"
+          alt="CatarakSense Logo"
+          class="logo"
+        />
+        <!-- Sesuaikan path logo -->
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="deteksi.html">Deteksi</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="#" class="logout">Logout</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-content-welcome">Deteksi Katarak Sekarang</h1>
+        <p class="hero-content-p">
+          Unggah gambar mata Anda untuk mendeteksi katarak dengan
+          <span class="slogan">teknologi AI</span>.
+        </p>
+        <button class="cta-btn" id="analyzeBtn">Analisis Sekarang</button>
+      </div>
+    </section>
+
+    <!-- Deteksi Section -->
+    <section class="deteksi" id="deteksi-section">
+      <div class="container">
+        <h2>Langkah Deteksi Katarak</h2>
+        <div class="progress-steps">
+          <div class="step">
+            <div class="circle">1</div>
+            <p>Unggah Gambar</p>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <p>Proses Deteksi</p>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <p>Lihat Hasil</p>
+          </div>
+        </div>
+        <div class="upload-section">
+          <h3>Unggah Gambar Mata</h3>
+          <div class="drag-drop">
+            <p>Seret dan lepas gambar di sini atau klik untuk memilih file</p>
+            <input type="file" id="imageUpload" accept="image/*" />
+          </div>
+          <div id="imagePreview">
+            <img id="previewImage" src="" alt="Pratinjau Gambar" />
+          </div>
+          <button id="uploadButton">Proses Gambar</button>
+          <p id="loading" style="display: none">Memproses...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pagination Section (Jika relevan) -->
+    <section class="cataract-list">
+      <div class="container">
+        <h2>Riwayat Deteksi</h2>
+        <div id="pagination"></div>
+        <!-- Elemen untuk renderPagination -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-menu">
+          <a href="index.html">Home</a>
+          <a href="deteksi.html">Deteksi</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+        <p class="footer-bottom-text">
+          &copy; 2025 CatarakSense. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="dist/deteksi.bundle.js"></script>
+  </body>
+</html>

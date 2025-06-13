@@ -14,6 +14,9 @@ module.exports = {
   },
   mode: "development", // Ganti ke 'production' saat release
   devServer: {
+    port: 3000,       
+    static: './dist',  
+    open: true,  
     client: {
       overlay: {
         errors: true,

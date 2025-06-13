@@ -66,7 +66,7 @@ Berikut langkah-langkah menggunakan platform CatarakSense:
 
 
 
-## 🧪 Struktur dan Alur Proyek
+## 🪜 Struktur dan Alur Proyek
 
 - **1. Pengumpulan Dataset**: Mengambil data citra mata dari sumber publik seperti Kaggle.
 - **2. Preprocessing Data**: Normalisasi, augmentasi, resize citra.

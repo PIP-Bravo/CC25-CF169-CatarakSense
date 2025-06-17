@@ -105,7 +105,7 @@ Berikut langkah-langkah menggunakan platform CatarakSense:
 Untuk pertanyaan lebih lanjut, hubungi tim kami di:
 
 📧 [alfonsocs@students.undip.ac.id]  
-🌐 Website: *(URL menyusul setelah deployment)*
+🌐 Website: [https://catarak-sense.netlify.app/]
 
 ---
 
